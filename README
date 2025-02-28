@@ -1,0 +1,9 @@
+Primul pas al temei a fost sa verific daca pachetul primit este trimis catre router. 
+Am facut asta prin a obtine adresa mac a interfetei pe care a fost primit mesajul si a verifica daca este corecta.
+Pasul urmator a fost sa verific ce tip de pachet am primit, IPv4 sau ARP.
+Daca era de tip IPv4 faceam verificarile necesare checksum-ului, TTL-ului si existenta rutei. 
+In caz ca exista o problema pachetul era aruncat si in caz ca trebuia se trimitea un mesaj ICMP ca si raspuns.
+Daca nu stiam adresa mac a destinatiei, pachetul era pus intr-o coada si era creata o cerere ARP.
+Cand era primita cererea ARP, se verificau toate pachetele din coada si erau trimise mai departe.
+De asemenea, puteam sa primim si o cerere ARP pentru a transmite adresa mac de pe router, si realizam asta prin modificarea parametrilor necesari in pachet.
+

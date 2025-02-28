@@ -1,0 +1,31 @@
+
+A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.1.3 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to 'numpy<2' or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File "/home/student/Desktop/homework-1-p-com-jugaru-marius-gabriel/./checker/checker.py", line 8, in <module>
+    from scapy.sendrecv import sendp, sniff
+  File "/usr/lib/python3/dist-packages/scapy/sendrecv.py", line 23, in <module>
+    from scapy.packet import Gen, Packet
+  File "/usr/lib/python3/dist-packages/scapy/packet.py", line 36, in <module>
+    from scapy.extlib import PYX
+  File "/usr/lib/python3/dist-packages/scapy/extlib.py", line 21, in <module>
+    from matplotlib import get_backend as matplotlib_get_backend
+  File "/usr/lib/python3/dist-packages/matplotlib/__init__.py", line 109, in <module>
+    from . import _api, _version, cbook, docstring, rcsetup
+  File "/usr/lib/python3/dist-packages/matplotlib/rcsetup.py", line 27, in <module>
+    from matplotlib.colors import Colormap, is_color_like
+  File "/usr/lib/python3/dist-packages/matplotlib/colors.py", line 56, in <module>
+    from matplotlib import _api, cbook, scale
+  File "/usr/lib/python3/dist-packages/matplotlib/scale.py", line 23, in <module>
+    from matplotlib.ticker import (
+  File "/usr/lib/python3/dist-packages/matplotlib/ticker.py", line 136, in <module>
+    from matplotlib import transforms as mtransforms
+  File "/usr/lib/python3/dist-packages/matplotlib/transforms.py", line 46, in <module>
+    from matplotlib._path import (
+AttributeError: _ARRAY_API not found
